@@ -53,6 +53,7 @@ async function cacheColleges(req, res, next) {
   next();
 }
 app.get("/db", cacheColleges, fetchCollege);
+app.get("/dbThesis", cacheColleges, fetchCollege);
 
 app.get("/dbRefresh", async (req, res) => {
   client.del("college");
